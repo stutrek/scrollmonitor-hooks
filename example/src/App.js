@@ -20,7 +20,7 @@ const WatchedElement = ({index}) => {
   return <span className={`box ${className}`} ref={ref}>{index}</span>
 }
 
-const count = parseInt(window.location.search.substr(1)) || 1000;
+const count = parseInt(window.location.search.substr(1)) || 300;
 
 const arr = [];
 for (let i=0; i < count; i++) {
@@ -32,8 +32,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          scrollmonitor-hooks demo<br />
+          <a href="https://github.com/stutrek/scrollmonitor-hooks">scrollmonitor-hooks</a>
+          demo
+          <br />
           (scroll down)
+          <br />
+          <small>add ?1000 to the end of the URL to change the number of boxes.
           <code>{`
 const WatchedElement = ({index}) => {
   const ref = useRef(null);
@@ -53,6 +57,8 @@ const WatchedElement = ({index}) => {
   return <span className={\`box \${className}\`} ref={ref}>{index}</span>
 }`}
           </code>
+</small>
+
         </header>
         <div>
           {arr.map(i => <WatchedElement key={i} index={i} />)}

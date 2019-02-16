@@ -1,6 +1,8 @@
 # scrollmonitor-hooks
 
-React hooks for the scrollmonitor.
+React hooks for the [scrollmonitor](http://github.com/stutrek/scrollmonitor).
+
+[see a demo](https://stutrek.github.io/scrollmonitor-hooks)
 
 ## Usage
 

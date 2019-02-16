@@ -1,5 +1,5 @@
 import React, { Component, useRef } from 'react';
-import { useScrollMonitor } from './scrollmonitor-hooks';
+import { useScrollMonitor, withScrollContainer } from './scrollmonitor-hooks';
 import './App.css';
 
 const WatchedElement = ({index}) => {
@@ -21,11 +21,21 @@ const WatchedElement = ({index}) => {
 }
 
 const count = parseInt(window.location.search.substr(1)) || 300;
+const inContainer = window.location.search.indexOf('boxed') !== -1;
 
 const arr = [];
 for (let i=0; i < count; i++) {
   arr.push(i);
 }
+
+const Boxes = () => <div>
+  {arr.map(i => <WatchedElement key={i} index={i} />)}
+</div>;
+
+const BoxesInContainer = withScrollContainer(React.forwardRef((props, ref) => <div ref={ref} className="shorty">
+  {arr.map(i => <WatchedElement key={i} index={i} />)}
+</div>));
+
 
 class App extends Component {
   render() {
@@ -33,14 +43,13 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <a href="https://github.com/stutrek/scrollmonitor-hooks">scrollmonitor-hooks</a>
-          demo
-          <br />
           (scroll down)
           <br />
           <small>add ?1000 to the end of the URL to change the number of boxes.
           <br />
           <code>{`
 const WatchedElement = ({index}) => {
+
   const ref = useRef(null);
   const scrollState = useScrollMonitor(ref);
 
@@ -61,9 +70,7 @@ const WatchedElement = ({index}) => {
 </small>
 
         </header>
-        <div>
-          {arr.map(i => <WatchedElement key={i} index={i} />)}
-        </div>
+        {inContainer ? <BoxesInContainer /> : <Boxes />}
       </div>
     );
   }

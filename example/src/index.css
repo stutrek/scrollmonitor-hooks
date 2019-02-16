@@ -52,3 +52,8 @@ code {
 .box.partial-below {
   background-color: #ffc;
 }
+
+.shorty {
+  height: 400px;
+  overflow: auto;
+}

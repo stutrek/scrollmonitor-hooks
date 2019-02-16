@@ -17,11 +17,13 @@
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1"
   },
   "babel": {
     "presets": [
-      "stage-2"
+      "stage-2",
+      "react"
     ]
   }
 }

@@ -38,6 +38,7 @@ class App extends Component {
           (scroll down)
           <br />
           <small>add ?1000 to the end of the URL to change the number of boxes.
+          <br />
           <code>{`
 const WatchedElement = ({index}) => {
   const ref = useRef(null);

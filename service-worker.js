@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/scrollmonitor-hooks/precache-manifest.b9b3a4e361eb87714082d0f95bd7fa46.js"
+  "/scrollmonitor-hooks/precache-manifest.b34091c7dc218ef1d155fcce76e1e8aa.js"
 );
 
 workbox.clientsClaim();

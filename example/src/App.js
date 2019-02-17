@@ -43,10 +43,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <a href="https://github.com/stutrek/scrollmonitor-hooks">scrollmonitor-hooks</a>
-          (scroll down)
-          <br />
           <small>add ?1000 to the end of the URL to change the number of boxes.
           <br />
+          <small>(scroll down)</small>
+          <br/>
           <code>{`
 const WatchedElement = ({index}) => {
 

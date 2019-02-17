@@ -5,6 +5,13 @@
   "main": "index.js",
   "author": "Stu Kabakoff <stutrek@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "scroll",
+    "scrolling",
+    "scrollmonitor",
+    "react",
+    "hooks"
+  ],
   "scripts": {
     "build": "babel index.js -d dist --source-maps"
   },

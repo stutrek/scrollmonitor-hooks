@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "44a9d6e0039aa3cd5905",
+    "revision": "94c9402e95733816857d",
     "url": "/scrollmonitor-hooks/static/css/main.54ec996d.chunk.css"
   },
   {
-    "revision": "44a9d6e0039aa3cd5905",
-    "url": "/scrollmonitor-hooks/static/js/main.44a9d6e0.chunk.js"
+    "revision": "94c9402e95733816857d",
+    "url": "/scrollmonitor-hooks/static/js/main.94c9402e.chunk.js"
   },
   {
     "revision": "36c2fef803d6586d86f8",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/scrollmonitor-hooks/static/js/2.acd8271b.chunk.js"
   },
   {
-    "revision": "fa7faa7467ec2b8c24926f4143d45c31",
+    "revision": "d2632a3325ad2c5a2cc2694485ee1bb3",
     "url": "/scrollmonitor-hooks/index.html"
   }
 ];

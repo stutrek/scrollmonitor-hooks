@@ -4,7 +4,7 @@ These React hooks for the [scrollmonitor](http://github.com/stutrek/scrollmonito
 
 [see a demo](https://stutrek.github.io/scrollmonitor-hooks)
 
-## Basic Usage
+## `useScrollState`
 
 1. Create a ref
 2. Pass it to `const scrollState = useScrollState(ref)`
@@ -64,7 +64,7 @@ const BoxesInContainer = withScrollContainer(<MyContainer />);
 ```
 
 
-## Advanced Usage
+## `useScrollMonitor`
 
 If you need additional speed or access to the monitor directly, you can use `useScrollMonitor`. This lets you put callbacks directly on the monitor.
 

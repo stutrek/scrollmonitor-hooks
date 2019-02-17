@@ -7,15 +7,15 @@ These React hooks for the [scrollmonitor](http://github.com/stutrek/scrollmonito
 ## Basic Usage
 
 1. Create a ref
-2. Pass it to `const scrollState = useScrollMonitor(ref)`
+2. Pass it to `const scrollState = useScrollState(ref)`
 3. Use the `scrollState` object to know the current scroll state.
 
 ```javascript
-import { useScrollMonitor } from 'scrollmonitor-hooks';
+import { useScrollState } from 'scrollmonitor-hooks';
 
 const WatchedElement = ({children}) => {
   const ref = useRef(null);
-  const scrollState = useScrollMonitor(ref);
+  const scrollState = useScrollState(ref);
 
   let className;
   if (!scrollState.isInViewport) {
@@ -36,7 +36,7 @@ const WatchedElement = ({children}) => {
 ### Arguments
 
 ```javascript
-const scrollState = useScrollMonitor(ref, offsets);
+useScrollState(ref, offsets);
 ```
 * `ref` - this should be the return value of React's `getRef` hook. It must be passed as a ref to the element you want to watch.
  * offsets - [same as scrollmonitor](http://github.com/stutrek/scrollmonitor#offsets)
@@ -66,10 +66,10 @@ const BoxesInContainer = withScrollContainer(<MyContainer />);
 
 ## Advanced Usage
 
-If you need additional speed or access to the monitor directly, you can use `useScrollMonitorRaw`. This lets you put callbacks directly on the monitor.
+If you need additional speed or access to the monitor directly, you can use `useScrollMonitor`. This lets you put callbacks directly on the monitor.
 
 ```javascript
-import { useScrollMonitorRaw } from 'scrollmonitor-hooks';
+import { useScrollMonitor } from 'scrollmonitor-hooks';
 
 const callbacks = {
   enterViewport: (watcher) => {
@@ -79,7 +79,7 @@ const callbacks = {
 
 const Component = ({children}) => {
   const ref = useRef(null);
-  useScrollMonitorRaw(ref, callbacks);
+  useScrollMonitor(ref, callbacks);
 
   return <span
     className={`box ${className}`}

@@ -1,10 +1,10 @@
 import React, { Component, useRef } from 'react';
-import { useScrollMonitor, withScrollContainer } from './scrollmonitor-hooks';
+import { useScrollState, withScrollContainer } from './scrollmonitor-hooks';
 import './App.css';
 
 const WatchedElement = ({index}) => {
   const ref = useRef(null);
-  const scrollState = useScrollMonitor(ref);
+  const scrollState = useScrollState(ref);
 
   let className;
   if (!scrollState.isInViewport) {
@@ -51,7 +51,7 @@ class App extends Component {
 const WatchedElement = ({index}) => {
 
   const ref = useRef(null);
-  const scrollState = useScrollMonitor(ref);
+  const scrollState = useScrollState(ref);
 
   let className;
   if (!scrollState.isInViewport) {

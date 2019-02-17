@@ -23,7 +23,7 @@ const defaultState = {
 
 const ScrollContainerContext = createContext(scrollmonitor);
 
-export const useScrollMonitorRaw = (ref, callbacks, offsets=0) => {
+export const useScrollMonitor = (ref, callbacks, offsets=0) => {
 	let { current } = ref;
 	const [waitCount, updateWaitCount] = useState(0);
 	const scrollMonitorContainer = useContext(ScrollContainerContext);
@@ -64,7 +64,7 @@ const createUpdatedState = (watcher) => {
 	}, {});
 };
 
-export const useScrollMonitor = (ref, offsets=0) => {
+export const useScrollState = (ref, offsets=0) => {
 	const [state, updateState] = useState(defaultState);
 	const [callbacks] = useState({
 		stateChange: (watcher) => {
@@ -72,7 +72,7 @@ export const useScrollMonitor = (ref, offsets=0) => {
 		}
 	});
 
-	useScrollMonitorRaw(ref, callbacks, offsets);
+	useScrollMonitor(ref, callbacks, offsets);
 
 	return state;
 };
@@ -86,7 +86,6 @@ const useScrollContainer = (ref) => {
 			updateWaitCount(waitCount+1);
 			return;
 		}
-		console.log('setting container);')
 		setContainer(scrollmonitor.createContainer(ref.current));
 	}, [ref.current]);
 

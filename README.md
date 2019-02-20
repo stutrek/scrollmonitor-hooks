@@ -1,6 +1,6 @@
 # scrollmonitor-hooks
 
-These React hooks for the [scrollmonitor](http://github.com/stutrek/scrollmonitor) provide an object with the current scroll state of an element. You can painlessly create a container element for in-page scrolling containers,
+These React hooks for the [scrollmonitor](http://github.com/stutrek/scrollmonitor) provide an object with the current scroll state of an element. Use the `withScrollContainer` HOC to create a container element for in-page scrolling,
 
 [see a demo](https://stutrek.github.io/scrollmonitor-hooks)
 
@@ -11,13 +11,18 @@ These React hooks for the [scrollmonitor](http://github.com/stutrek/scrollmonito
 3. Use the `scrollState` object to know the current scroll state.
 4. Pass the ref to the item you want to watch.
 
+### Example
+
 ```javascript
 import { useScrollState } from 'scrollmonitor-hooks';
 
 const WatchedElement = ({children}) => {
+  // 1. Create a ref
   const ref = useRef(null);
+  // 2. Pass it to `useScrollState`
   const scrollState = useScrollState(ref);
-
+  
+  // 3. Get the current scroll state.
   let className;
   if (!scrollState.isInViewport) {
     className = 'in';
@@ -27,7 +32,7 @@ const WatchedElement = ({children}) => {
 
   return <span
     className={className}
-    ref={ref} // <----- be sure to pass the ref!
+    ref={ref} // <----- 4. be sure to pass the ref!
   >
     {children}
   </span>;
@@ -55,6 +60,8 @@ This has the same data properties as the [scrollmonitor](http://github.com/stutr
 * `scrollState.height` - top - bottom.
 
 1. If the element is larger than the viewport `isFullyInViewport` is true when the element spans the entire viewport.
+
+_note: all values will be false the first render because React has not yet created the DOM._
 
 ## `withScrollContainer`
 
